@@ -19,4 +19,4 @@ lama_parkir = int(input("Masukkan lama parkir (jam): "))
 tarif = hitung_tarif_parkir(lama_parkir)
 
 # Output hasil
-print(f"Total tarif parkir: Rp {tarif}")
+print(f"Total tarif parkir: Rp {tarif:,.0f}")
