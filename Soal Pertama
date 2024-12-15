@@ -21,12 +21,23 @@ def hitung_biaya_pengiriman(panjang, lebar, tinggi, berat):
     return berat * tarif_per_kg_besar + tambahan_dimensi_besar
 
 
-# Input dari pengguna
+# Input dari pengguna dengan validasi
 print("Perhitungan Biaya Ekspedisi - Kota/Kabupaten Pasuruan")
-panjang = float(input("Masukkan panjang paket (cm): "))
-lebar = float(input("Masukkan lebar paket (cm): "))
-tinggi = float(input("Masukkan tinggi paket (cm): "))
-berat = float(input("Masukkan berat paket (kg): "))
+
+while True:
+    try:
+        panjang = float(input("Masukkan panjang paket (cm): "))
+        lebar = float(input("Masukkan lebar paket (cm): "))
+        tinggi = float(input("Masukkan tinggi paket (cm): "))
+        berat = float(input("Masukkan berat paket (kg): "))
+        
+        # Validasi nilai input
+        if panjang <= 0 or lebar <= 0 or tinggi <= 0 or berat <= 0:
+            print("Panjang, lebar, tinggi, dan berat harus lebih dari 0. Silakan coba lagi.")
+            continue
+        break
+    except ValueError:
+        print("Input tidak valid. Masukkan angka yang benar.")
 
 # Hitung biaya
 biaya = hitung_biaya_pengiriman(panjang, lebar, tinggi, berat)
