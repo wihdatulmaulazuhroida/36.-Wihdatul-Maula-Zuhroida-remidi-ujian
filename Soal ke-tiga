@@ -1,0 +1,22 @@
+def hitung_tarif_parkir(lama_parkir):
+    # Tarif dasar
+    tarif_awal = 3000
+    tarif_tambahan = 1500
+    denda = 10000
+    
+    if lama_parkir <= 2:
+        total_tarif = tarif_awal
+    else:
+        total_tarif = tarif_awal + (lama_parkir - 2) * tarif_tambahan
+        if lama_parkir > 24:
+            total_tarif += denda
+    
+    return total_tarif
+
+
+# Input dari pengguna
+lama_parkir = int(input("Masukkan lama parkir (jam): "))
+tarif = hitung_tarif_parkir(lama_parkir)
+
+# Output hasil
+print(f"Total tarif parkir: Rp {tarif}")
