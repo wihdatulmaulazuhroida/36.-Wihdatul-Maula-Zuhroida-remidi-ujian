@@ -4,14 +4,15 @@ def hitung_tarif_parkir(jenis_kendaraan, lama_parkir):
     tarif_motor_per_jam = 1000
     tarif_mobil_per_jam = 1500
     denda_lebih_24_jam = 10000
-    
+
+    #rumus dan percabangan
     if lama_parkir <= 2:
         total_tarif = tarif_awal
     else:
         if jenis_kendaraan.lower() == "motor":
-            tambahan = (lama_parkir - 2) * tarif_motor_per_jam
+            tambahan = (lama_parkir - 2) * tarif_motor_per_jam + tarif_awal
         elif jenis_kendaraan.lower() == "mobil":
-            tambahan = (lama_parkir - 2) * tarif_mobil_per_jam
+            tambahan = (lama_parkir - 2) * tarif_mobil_per_jam + tarif_awal
         else:
             return "Jenis kendaraan tidak valid"
         
